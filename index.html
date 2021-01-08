@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="bulbdata">
+        Lights ON OFF
+    </h1>
+    <br>
+    <main class="lightapp">
+        <figure class="lightstyle">
+            <img src="off.png" id="off1" >
+            <figcaption>
+                <p id="para1">Light ON OFF</p>
+            </figcaption>
+        </figure>
+        <figure class="lightstyle">
+            <img src="off.png" id="off2" >
+            <figcaption>
+                <p id="para2">Light ON OFF</p>
+            </figcaption>
+        </figure>
+
+        <figure class="lightstyle">
+            <img src="off.png" id="off3" >
+            <figcaption>
+                <p id="para3">Light ON OFF</p>
+            </figcaption>
+        </figure>
+
+        <figure class="lightstyle">
+            <img src="off.png" id="off4" >
+            <figcaption>
+                <p id="para4">Light ON OFF</p>
+            </figcaption>
+        </figure>
+
+        <figure class="lightstyle">
+            <img src="off.png" id="off5" >
+            <figcaption>
+                <p id="para5">Light ON OFF</p>
+            </figcaption>
+        </figure>
+        
+        
+    </main>
+    <div class="onoffbtn">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider " onclick="light()"></span>
+        </label>
+    </div>
+
+   
+
+    <script type="text/javascript">
+
+        const light = () => {
+
+            let bulbtxt = document.getElementById('bulbdata');
+      
+
+            for (i = 1; i < 6; i++) {
+                let bulb = document.getElementById('off'.concat(i));
+                let para = document.getElementById('para'.concat(i));
+
+                if (bulb.src.match('on')) {
+                    bulb.src = "off.png";
+                    bulbtxt.innerHTML = "Light OFF";
+                    bulbtxt.style.color = "red";
+                    para.innerHTML = "Light OFF";
+                    para.style.color = "red";
+                
+                }
+                else {
+                    bulb.src = "on.png";
+                    bulbtxt.innerHTML = "Light ON";
+                    bulbtxt.style.color = "yellow";
+                   para.innerHTML = "Light ON";
+                   para.style.color = "yellow";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
